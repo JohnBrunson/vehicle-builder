@@ -260,6 +260,7 @@ class Cli {
         // TODO: push the motorbike to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the motorbike
         // TODO: perform actions on the motorbike
+        const motorbikeWheels = [new Wheel(answers.frontWheelDiameter, answers.frontWheelBrand), new Wheel(answers.rearWheelDiameter, answers.rearWheelBrand)]
         const motorbike = new Motorbike(
           Cli.generateVin(),
           answers.color,
@@ -268,7 +269,8 @@ class Cli {
           parseInt(answers.year),
           parseInt(answers.weight),
           parseInt(answers.topSpeed),
-          []
+          //passing wheel data to object.
+          motorbikeWheels
         )
           this.vehicles.push(motorbike);
           // set the selectedVehicleVin to the vin of the motorbike
